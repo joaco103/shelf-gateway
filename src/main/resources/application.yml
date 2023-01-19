@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: invoice-shelf
+        uri: lb://invoice-shelf
+        predicates:
+        - Path=/api/shelf/**
+        filters:
+        - StripPrefix=2
